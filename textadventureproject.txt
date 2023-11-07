@@ -1,0 +1,116 @@
+def introscene():
+    step = ["become_invisible", "use_knife","fly", "use_bomb"]
+    print("You find four doors in front of you! ,gryffindor,slytherin,ravenclaw,hufflepuff "
+          "select an action to enter into the house")
+    userinput = ""
+    while userinput not in step:
+        print("directions:become_invisible/use_knife/fly/use_bomb")
+        userinput =input()
+        if userinput== "become_invisible":
+            show_gryffindor()
+        elif userinput=="use_knife":
+            show_slytherin()
+        elif userinput =="fly":
+            show_ravenclaw()
+        elif userinput =="use_bomb":
+            show_huffle_puff()
+        else:
+            print("please enter the valid option for the harry potter adventure!!!")
+def show_gryffindor():
+    step = ["become_invisible","set_fire","fly"]
+    print("WELCOME TO GRYFFINDOR HOUSE!!" +name+ ". Now  you see a big ice age man of creepy look"
+          " coming towards you with brown wooden stick!. "
+          "what will be your next step? ")
+    userinput=""
+    while userinput not in step:
+        print("become_invisible/set_fire/fly")
+        userinput =input()
+        if userinput== "become_invisible":
+            show_slytherin()
+        elif userinput== "set_fire":
+            print("WELCOME TO GRYFFINDOR HOUSE!!" +name+ "you have successfully stopped iceman from attacking you!."
+                  "now you are entering into hufflepuff house")
+            show_huffle_puff()
+        elif userinput=="fly":
+            print("you are flying towards ravenclaw house!")
+            show_ravenclaw()
+        else:
+            print("please enter the valid option for the harry potter adventure!!!")
+def show_slytherin():
+    step = ["use_knife","fly","use_bomb"]
+    print("WELCOME TO SLYTHERIN HOUSE!!" +name+ "you are surrounded by venomous snakes.what will be your next step")
+    userinput=""
+    while userinput not in step:
+        print("use_knife/fly/use_bomb")
+        userinput =input()
+        if userinput== "use_knife":
+            print("you are killed by the venomous snakes!")
+            introscene()
+        elif userinput== "fly":
+            print("you have escaped from snakes and flying towards ravenclaw house!")
+            show_ravenclaw()
+        elif userinput=="use_bomb":
+            print("you have killed yourself using bomb!!")
+            introscene()
+        else:
+            print("please enter the valid option for the harry potter adventure!!!")
+
+
+
+def show_ravenclaw():
+    step = ["become_invisible","use_knife","fly"]
+    print("WELCOME TO RAVENCLAW HOUSE!!" +name+ ". you have awakened the 100 years sleeping vulture!! by entering into ravenclaw house."
+          "it is coming to with great power waving its wings towards you ,what is your next step?  ")
+    userinput=""
+    while userinput not in step:
+        print("become_invisible/use_knife/fly")
+        userinput =input()
+        if userinput== "become_invisible":
+            show_gryffindor()
+        elif userinput== "use_knife":
+            print("you have successfully killed the demon vulture using your knife!!!,WELL DONE"
+                  "you won the game")
+            quit()
+        elif userinput=="fly":
+            print("the vulture demon has killed you!")
+            introscene()
+        else:
+            print("please enter the valid option for the harry potter adventure!!!")
+
+
+
+def show_huffle_puff():
+    step = ["set_fire","use_knife","use_bomb"]
+    print("WELCOME TO HUFFLEPUFF HOUSE!!" +name+ ". you are surrounded by very cruel,"
+                                                 "scary monster and zombies,what step would you like to take? ")
+    userinput=""
+    while userinput not in step:
+        print("set_fire/use_knife/use_bomb")
+        userinput =input()
+        if userinput== "use_bomb":
+            print("you have killed yourself using bomb!")
+            quit()
+        elif userinput== "set_fire":
+            print("you have managed to enter ravenclaw house!")
+            show_ravenclaw()
+        elif userinput=="use_knife":
+            print("you have killed monsters and zombies using your knife!!!,HURRAY,YOU WON THE ADVENTURE GAME!!")
+            quit()
+        else:
+            print("please enter the valid option for the harry potter adventure!!!")
+
+
+
+
+if __name__ == "__main__":
+  while True:
+      print("Welcome to the HARRY POTTER'S Adventure Game!")
+      print("You are entering into the  world of wizards,there "
+            "is school of witchcrafts and wizardry  known as hogwarts..")
+      print("However, during your exploration, you find yourself lost.")
+      print("You can choose to walk in multiple directions to find a way out.")
+      print("Let's start with your name: ")
+      name = input()
+      print("Good luck, " + name + ".")
+      introscene()
+
